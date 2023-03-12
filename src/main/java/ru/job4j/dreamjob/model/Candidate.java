@@ -7,20 +7,20 @@ public class Candidate {
 
     private int id;
 
-    private String title;
+    private String name;
 
     private String description;
 
     private LocalDateTime creationDate;
 
-    public Candidate(int id, String title) {
+    public Candidate(int id, String name) {
         this.id = id;
-        this.title = title;
+        this.name  = name;
     }
 
-    public Candidate(int id, String title, String description, LocalDateTime creationDate) {
+    public Candidate(int id, String name, String description, LocalDateTime creationDate) {
         this.id = id;
-        this.title = title;
+        this.name  = name;
         this.description = description;
         this.creationDate = creationDate;
     }
@@ -33,12 +33,12 @@ public class Candidate {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -66,7 +66,7 @@ public class Candidate {
             return false;
         }
         Candidate candidate = (Candidate) o;
-        return id == candidate.id && Objects.equals(title, candidate.title) && Objects.equals(description, candidate.description) && Objects.equals(creationDate, candidate.creationDate);
+        return id == candidate.id && Objects.equals(name, candidate.name) && Objects.equals(description, candidate.description) && Objects.equals(creationDate, candidate.creationDate);
     }
 
     @Override

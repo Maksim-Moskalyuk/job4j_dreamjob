@@ -2,7 +2,6 @@ package ru.job4j.dreamjob.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Candidate;
-import ru.job4j.dreamjob.model.Vacancy;
 
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -21,12 +20,12 @@ public class MemoryCandidateRepository implements CandidateRepository {
     private final Map<Integer, Candidate> candidates = new HashMap<>();
 
     private MemoryCandidateRepository() {
-        save(new Candidate(0, "Intern Java Developer"));
-        save(new Candidate(0, "Junior Java Developer"));
-        save(new Candidate(0, "Junior+ Java Developer"));
-        save(new Candidate(0, "Middle Java Developer"));
-        save(new Candidate(0, "Middle+ Java Developer"));
-        save(new Candidate(0, "Senior Java Developer"));
+        save(new Candidate(0, "Александр", "Intern Java Developer", LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Candidate(0, "Денис", "Junior Java Developer", LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Candidate(0, "Алёна", "Junior+ Java Developer", LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Candidate(0, "Мария", "Middle Java Developer", LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Candidate(0, "Пётр", "Middle+ Java Developer", LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Candidate(0, "Максим", "Senior Java Developer", LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
     }
 
     public static MemoryCandidateRepository getInstance() {
@@ -48,7 +47,7 @@ public class MemoryCandidateRepository implements CandidateRepository {
     @Override
     public boolean update(Candidate candidate) {
         return candidates.computeIfPresent(candidate.getId(),
-                (id, oldCandidate) -> new Candidate(oldCandidate.getId(), candidate.getTitle())) != null;
+                (id, oldCandidate) -> new Candidate(oldCandidate.getId(), candidate.getName())) != null;
     }
 
     @Override
@@ -60,4 +59,5 @@ public class MemoryCandidateRepository implements CandidateRepository {
     public Collection<Candidate> findAll() {
         return candidates.values();
     }
+
 }

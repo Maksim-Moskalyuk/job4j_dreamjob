@@ -18,12 +18,18 @@ public class MemoryVacancyRepository implements VacancyRepository {
     private final Map<Integer, Vacancy> vacancies = new HashMap<>();
 
     private MemoryVacancyRepository() {
-        save(new Vacancy(0, "Intern Java Developer", "Это новичок с опытом до 6 месяцев, который знает базовые конструкции Джава",  LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
-        save(new Vacancy(0, "Junior Java Developer", "Это новичок с опытом от 6-12 месяцев, который знает базовые конструкции Джава",  LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
-        save(new Vacancy(0, "Junior+ Java Developer", "Это специалист со стажем от 1 года, который способен самостоятельно писать простые программы на Джава",  LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
-        save(new Vacancy(0, "Middle Java Developer", "Это специалист со стажем от 3 лет, который способен самостоятельно и с нуля сделать программу или приложение",  LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
-        save(new Vacancy(0, "Middle+ Java Developer", "Это специалист со стажем от 3-5 лет, который способен самостоятельно и с нуля сделать программу или приложение",  LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
-        save(new Vacancy(0, "Senior Java Developer", "Это профессионал с опытом не менее 5 лет, который совмещает обязанности технического руководителя и  в команде программистов",  LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Vacancy(0, "Intern Java Developer", "Это новичок с опытом до 6 месяцев",
+                LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Vacancy(0, "Junior Java Developer", "Это новичок с опытом от 6-12 месяцев",
+                LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Vacancy(0, "Junior+ Java Developer", "Это специалист со стажем от 1 года",
+                LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Vacancy(0, "Middle Java Developer", "Это специалист со стажем от 3 лет",
+                LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Vacancy(0, "Middle+ Java Developer", "Это специалист со стажем от 3-5 лет",
+                LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
+        save(new Vacancy(0, "Senior Java Developer", "Это профессионал с опытом не менее 5 лет",
+                LocalDateTime.of(2023, Month.MARCH, 12, 17, 56, 0)));
     }
 
     public static MemoryVacancyRepository getInstance() {

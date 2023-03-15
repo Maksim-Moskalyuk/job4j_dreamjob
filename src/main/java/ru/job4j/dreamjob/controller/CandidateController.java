@@ -24,7 +24,6 @@ public class CandidateController {
         return "candidates/create";
     }
 
-
     @GetMapping("/{id}")
     public String getById(Model model, @PathVariable int id) {
         var candidateOptional = candidateRepository.findById(id);
@@ -55,6 +54,5 @@ public class CandidateController {
         }
         return "redirect:/candidates";
     }
-
 
 }

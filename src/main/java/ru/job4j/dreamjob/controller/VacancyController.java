@@ -7,7 +7,6 @@ import ru.job4j.dreamjob.model.Vacancy;
 import ru.job4j.dreamjob.repository.MemoryVacancyRepository;
 import ru.job4j.dreamjob.repository.VacancyRepository;
 
-
 @Controller
 @RequestMapping("/vacancies") /* Работать с кандидатами будем по URI /vacancies/** */
 public class VacancyController {
@@ -30,6 +29,7 @@ public class VacancyController {
         vacancyRepository.save(vacancy);
         return "redirect:/vacancies";
     }
+
     @GetMapping("/{id}")
     public String getById(Model model, @PathVariable int id) {
         var vacancyOptional = vacancyRepository.findById(id);

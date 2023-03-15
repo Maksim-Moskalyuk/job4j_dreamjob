@@ -76,4 +76,5 @@ public class Vacancy {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

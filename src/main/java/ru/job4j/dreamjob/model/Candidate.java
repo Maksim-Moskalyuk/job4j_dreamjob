@@ -11,7 +11,7 @@ public class Candidate {
 
     private String description;
 
-    private LocalDateTime creationDate;
+    private LocalDateTime creationDate = LocalDateTime.now();
 
     public Candidate(int id, String name) {
         this.id = id;
@@ -23,6 +23,9 @@ public class Candidate {
         this.name  = name;
         this.description = description;
         this.creationDate = creationDate;
+    }
+
+    public Candidate() {
     }
 
     public int getId() {

@@ -1,11 +1,13 @@
 package ru.job4j.dreamjob.controller;
 
+import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.service.CandidateService;
 
+@ThreadSafe
 @Controller
 @RequestMapping("/candidates")
 public class CandidateController {
@@ -25,6 +27,12 @@ public class CandidateController {
     @GetMapping("/create")
     public String getCreationPage() {
         return "candidates/create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute Candidate candidate) {
+        candidateService.save(candidate);
+        return "redirect:/candidates";
     }
 
     @GetMapping("/{id}")

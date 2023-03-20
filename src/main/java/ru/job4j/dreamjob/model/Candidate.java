@@ -20,6 +20,8 @@ public class Candidate {
 
     private int cityId;
 
+    private int fileId;
+
     public Candidate(int id, String name) {
         this.id = id;
         this.name = name;
@@ -31,11 +33,12 @@ public class Candidate {
         this.description = description;
     }
 
-    public Candidate(int id, String name, String description, int cityId) {
+    public Candidate(int id, String name, String description, int cityId, int fileId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.cityId = cityId;
+        this.fileId = fileId;
     }
 
     @Override

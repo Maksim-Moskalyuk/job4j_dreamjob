@@ -1,15 +1,10 @@
 package ru.job4j.dreamjob.repository;
 
-import lombok.extern.slf4j.Slf4j;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob.model.Candidate;
 
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -47,7 +42,9 @@ public class MemoryCandidateRepository implements CandidateRepository {
     @Override
     public boolean update(Candidate candidate) {
         return candidates.computeIfPresent(candidate.getId(),
-                (id, oldCandidate) -> new Candidate(oldCandidate.getId(), candidate.getName(), candidate.getDescription(), candidate.getCityId())) != null;
+                (id, oldCandidate) -> new Candidate(oldCandidate.getId(), candidate.getName(),
+                        candidate.getDescription(), candidate.getCityId(),
+                        candidate.getFileId())) != null;
     }
 
     @Override

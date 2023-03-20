@@ -49,7 +49,6 @@ public class Vacancy {
         this.visible = visible;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -59,8 +58,9 @@ public class Vacancy {
             return false;
         }
         Vacancy vacancy = (Vacancy) o;
-        return id == vacancy.id ;
+        return id == vacancy.id;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id);

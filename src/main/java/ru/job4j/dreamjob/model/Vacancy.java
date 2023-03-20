@@ -1,11 +1,15 @@
 package ru.job4j.dreamjob.model;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Vacancy {
 
@@ -43,6 +47,23 @@ public class Vacancy {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Vacancy vacancy = (Vacancy) o;
+        return id == vacancy.id ;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 
 }

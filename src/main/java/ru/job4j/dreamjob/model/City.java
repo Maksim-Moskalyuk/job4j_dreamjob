@@ -1,5 +1,12 @@
 package ru.job4j.dreamjob.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Objects;
+
+@Getter
+@Setter
 public class City {
 
     private final int id;
@@ -11,12 +18,16 @@ public class City {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city = (City) o;
+        return id == city.id && Objects.equals(name, city.name);
     }
 
-    public String getName() {
-        return name;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
-
 }

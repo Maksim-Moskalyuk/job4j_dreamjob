@@ -11,7 +11,6 @@ import java.util.Collection;
 @Service
 public class SimpleCityService implements CityService {
 
-    //private final CityRepository cityRepository;
     private final Sql2oCityRepository sql2oCityRepository;
 
     public SimpleCityService(Sql2oCityRepository sql2oCityRepository) {

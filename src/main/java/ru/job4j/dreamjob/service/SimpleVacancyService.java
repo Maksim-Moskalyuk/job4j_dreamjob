@@ -12,7 +12,6 @@ import java.util.Optional;
 @Service
 public class SimpleVacancyService implements VacancyService {
 
-    //private final VacancyRepository vacancyRepository;
     private final Sql2oVacancyRepository vacancyRepository;
 
     private final FileService fileService;

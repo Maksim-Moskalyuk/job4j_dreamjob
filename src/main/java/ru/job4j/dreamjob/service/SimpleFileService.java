@@ -18,7 +18,6 @@ import java.util.UUID;
 @Service
 public class SimpleFileService implements FileService {
 
-    //private final FileRepository fileRepository;
     private final Sql2oFileRepository fileRepository;
 
     private final String storageDirectory;

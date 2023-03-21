@@ -3,6 +3,7 @@ package ru.job4j.dreamjob.service;
 import org.springframework.stereotype.Service;
 import ru.job4j.dreamjob.dto.FileDto;
 import ru.job4j.dreamjob.model.Vacancy;
+import ru.job4j.dreamjob.repository.Sql2oVacancyRepository;
 import ru.job4j.dreamjob.repository.VacancyRepository;
 
 import java.util.Collection;
@@ -11,11 +12,12 @@ import java.util.Optional;
 @Service
 public class SimpleVacancyService implements VacancyService {
 
-    private final VacancyRepository vacancyRepository;
+    //private final VacancyRepository vacancyRepository;
+    private final Sql2oVacancyRepository vacancyRepository;
 
     private final FileService fileService;
 
-    public SimpleVacancyService(VacancyRepository sql2oVacancyRepository, FileService fileService) {
+    public SimpleVacancyService(Sql2oVacancyRepository sql2oVacancyRepository, FileService fileService) {
         this.vacancyRepository = sql2oVacancyRepository;
         this.fileService = fileService;
     }

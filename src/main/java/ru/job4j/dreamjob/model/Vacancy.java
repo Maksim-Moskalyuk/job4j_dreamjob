@@ -1,6 +1,5 @@
 package ru.job4j.dreamjob.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,16 +12,6 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 public class Vacancy {
-
-    public static final Map<String, String> COLUMN_MAPPING = Map.of(
-            "id", "id",
-            "title", "title",
-            "description", "description",
-            "creation_date", "creationDate",
-            "visible", "visible",
-            "city_id", "cityId",
-            "file_id", "fileId"
-    );
 
     private int id;
 
@@ -37,6 +26,16 @@ public class Vacancy {
     private int cityId;
 
     private int fileId;
+
+    public static final Map<String, String> COLUMN_MAPPING = Map.of(
+            "id", "id",
+            "title", "title",
+            "description", "description",
+            "creation_date", "creationDate",
+            "visible", "visible",
+            "city_id", "cityId",
+            "file_id", "fileId"
+    );
 
     public Vacancy(int id, String title, String description, LocalDateTime creationDate, boolean visible, int cityId, int fileId) {
         this.id = id;

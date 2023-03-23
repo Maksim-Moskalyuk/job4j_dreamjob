@@ -22,7 +22,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/register")
-    public String getRegistrationPage(){
+    public String getRegistrationPage() {
         return "users/register";
     }
 

@@ -1,6 +1,7 @@
 package ru.job4j.dreamjob.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;

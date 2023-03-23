@@ -1,5 +1,6 @@
 package ru.job4j.dreamjob.service;
 
+import lombok.RequiredArgsConstructor;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Service;
 import ru.job4j.dreamjob.dto.FileDto;
@@ -12,16 +13,12 @@ import java.util.Optional;
 
 @ThreadSafe
 @Service
+@RequiredArgsConstructor
 public class SimpleCandidateService implements CandidateService {
 
     private final Sql2oCandidateRepository candidateRepository;
 
     private final FileService fileService;
-
-    public SimpleCandidateService(Sql2oCandidateRepository sql2oCandidateRepository, FileService fileService) {
-        this.candidateRepository = sql2oCandidateRepository;
-        this.fileService = fileService;
-    }
 
     @Override
     public Candidate save(Candidate candidate, FileDto image) {

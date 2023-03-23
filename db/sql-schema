@@ -35,3 +35,11 @@ create table candidates
     city_id       int references cities(id),
     file_id       int references files(id)
 );
+
+CREATE TABLE users
+(
+    id       SERIAL PRIMARY KEY,
+    email    varchar unique not null,
+    name     varchar        not null,
+    password varchar        not null
+);

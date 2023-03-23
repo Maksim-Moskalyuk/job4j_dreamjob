@@ -1,5 +1,7 @@
 package ru.job4j.dreamjob.service;
 
+import lombok.RequiredArgsConstructor;
+import net.jcip.annotations.ThreadSafe;
 import org.springframework.stereotype.Service;
 import ru.job4j.dreamjob.dto.FileDto;
 import ru.job4j.dreamjob.model.Vacancy;
@@ -9,16 +11,13 @@ import java.util.Collection;
 import java.util.Optional;
 
 @Service
+@ThreadSafe
+@RequiredArgsConstructor
 public class SimpleVacancyService implements VacancyService {
 
     private final Sql2oVacancyRepository vacancyRepository;
 
     private final FileService fileService;
-
-    public SimpleVacancyService(Sql2oVacancyRepository sql2oVacancyRepository, FileService fileService) {
-        this.vacancyRepository = sql2oVacancyRepository;
-        this.fileService = fileService;
-    }
 
     @Override
     public Vacancy save(Vacancy vacancy, FileDto image) {

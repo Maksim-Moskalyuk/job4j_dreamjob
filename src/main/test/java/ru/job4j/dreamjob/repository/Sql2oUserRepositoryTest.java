@@ -72,5 +72,4 @@ class Sql2oUserRepositoryTest {
         });
         assertThat(exception.getMessage()).containsIgnoringCase("Unique index or primary key violation");
     }
-
 }

@@ -74,5 +74,4 @@ public class Sql2oUserRepository implements UserRepository {
             return affectedRows > 0;
         }
     }
-
 }

@@ -11,5 +11,4 @@ public interface UserService {
     Optional<User> findByEmailAndPassword(String email, String password);
 
     Optional<User> findByEmail(String email);
-
 }

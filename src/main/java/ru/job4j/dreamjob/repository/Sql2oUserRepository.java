@@ -1,5 +1,6 @@
 package ru.job4j.dreamjob.repository;
 
+import lombok.extern.slf4j.Slf4j;
 import net.jcip.annotations.ThreadSafe;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
@@ -7,9 +8,11 @@ import org.sql2o.Sql2o;
 import ru.job4j.dreamjob.model.User;
 import ru.job4j.dreamjob.model.Vacancy;
 
+import javax.xml.bind.SchemaOutputResolver;
 import java.util.Collection;
 import java.util.Optional;
 
+@Slf4j
 @Repository
 @Primary
 @ThreadSafe
@@ -33,8 +36,9 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generateId);
             return Optional.ofNullable(user);
         } catch (Exception e) {
-            return Optional.empty();
+            System.out.println("Ошибка сохранения " + e.getMessage());
         }
+        return Optional.empty();
     }
 
     @Override

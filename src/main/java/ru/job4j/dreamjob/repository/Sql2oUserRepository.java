@@ -36,7 +36,7 @@ public class Sql2oUserRepository implements UserRepository {
             user.setId(generateId);
             return Optional.ofNullable(user);
         } catch (Exception e) {
-            System.out.println("Ошибка сохранения " + e.getMessage());
+            log.debug("Ошибка сохранения пользователя", e);
         }
         return Optional.empty();
     }
